@@ -1,4 +1,4 @@
-const { processPayment } = require('../../utils/paymentService');
+const { processPayment } = require('../../src/utils/paymentService');
 
 describe('Payment Service', () => {
   test('should process COD payment successfully', async () => {
