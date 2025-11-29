@@ -4,6 +4,14 @@ const Restaurant = require('../models/Restaurant');
 const { addMenuItem, uploadMenuImage } = require('../controllers/restaurantController');
 const { protect, restrictTo } = require('../middlewares/authMiddleware');
 
+router.get('/', async (req, res) => {
+  const restaurants = await Restaurant.find();
+  res.json({
+    success: true,
+    data: restaurants
+  });
+});
+
 
 router.post('/', protect, restrictTo('admin'), async (req, res) => {
   const { name, address, contact } = req.body;
