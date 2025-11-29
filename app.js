@@ -12,11 +12,14 @@ app.use(morgan('dev'));
 // Routes
 const authRoutes = require('./src/routes/authRoutes');
 const restaurantRoutes = require('./src/routes/restaurantRoutes');
+const orderRoutes = require('./src/routes/orderRoutes');
+
+
 
 // Use routes
 app.use('/api/v1/auth', authRoutes);
 app.use('/api/v1/restaurants', restaurantRoutes);
-
+app.use('/api/v1/orders', orderRoutes);
 // Global error handling middleware
 app.use(errorHandler);
 
